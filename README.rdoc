@@ -1,6 +1,34 @@
 = migratification
 
-Description goes here.
+http://github.com/midas/migratification
+
+
+== DESCRIPTION
+
+Set up any project to use Active Record migrations.  Not just any project but any directory.
+
+
+== FEATURES
+
+* Creates a Rakefile
+* Creates a rake directory to hold rake tasks
+* Creates a db.rake file holding all of the database specific tasks
+* Creates a grails.rake file holding all grails specific tasks (if specified with --grails option)
+* Creates db/config and db/migrate directories to hold the migration specific scripts
+
+
+== INSTALL
+
+  gem sources -a http://gemcutter.org
+  sudo gem install migratory
+
+
+== USAGE
+
+  migratify ~/project
+
+  rake -T # to see all the tasks available
+
 
 == Note on Patches/Pull Requests
  
@@ -12,6 +40,15 @@ Description goes here.
   (if you want to have your own version, that is fine but bump version in a commit by itself I can ignore when I pull)
 * Send me a pull request. Bonus points for topic branches.
 
-== Copyright
 
-Copyright (c) 2010 Jason Harrelson. See LICENSE for details.
+== LICENSE
+
+Copyright (c) 2009 C. Jason Harrelson (midas)
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

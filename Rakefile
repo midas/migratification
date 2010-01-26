@@ -6,10 +6,10 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "migratification"
     gem.summary = %Q{Set up any project to use AR migrations}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.description = %Q{Generates a directory structure and assets to allow for using Active Record migrations within any project, Groovy, C\#{}, etc.}
     gem.email = "jason@lookforwardenterprises.com"
     gem.homepage = "http://github.com/midas/migratification"
-    gem.authors = ["Jason Harrelson"]
+    gem.authors = ["C. Jason Harrelson midas"]
     gem.add_development_dependency "rspec", ">= 1.2.9"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
