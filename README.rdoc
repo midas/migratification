@@ -5,7 +5,7 @@ http://github.com/midas/migratification
 
 == DESCRIPTION
 
-Set up any project to use Active Record migrations.  Not just any project but any directory.
+Generates a directory structure and assets to allow for using Active Record migrations within any project, Groovy, C\#, etc.
 
 
 == FEATURES

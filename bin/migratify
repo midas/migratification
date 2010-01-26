@@ -55,6 +55,10 @@ files = {
 gem_which_loc = ""
 gem_name = "migratification"
 IO.popen( 'gem which migratification' ) { |f| gem_which_loc = f.gets }
+#gem_which_loc = `gem which migratification`
+
+puts "\njason"
+puts "\n\nlocation: #{gem_which_loc}"
 
 gem_which_loc.gsub!( /\n/, '' )
 gem_which_loc.gsub!( /\/lib\/#{gem_name}.rb/, '' ) if gem_which_loc =~ /\/lib\/#{gem_name}.rb/
