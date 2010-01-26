@@ -6,7 +6,7 @@ begin
   Jeweler::Tasks.new do |gem|
     gem.name = "migratification"
     gem.summary = %Q{Set up any project to use AR migrations}
-    gem.description = %Q{Generates a directory structure and assets to allow for using Active Record migrations within any project, Groovy, C\#{}, etc.}
+    gem.description = %Q{Generates a directory structure and assets to allow for using Active Record migrations within any project, Groovy, C\#, etc.}
     gem.email = "jason@lookforwardenterprises.com"
     gem.homepage = "http://github.com/midas/migratification"
     gem.authors = ["C. Jason Harrelson midas"]

@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.authors = ["C. Jason Harrelson midas"]
   s.date = %q{2010-01-25}
   s.default_executable = %q{migratify}
-  s.description = %q{Generates a directory structure and assets to allow for using Active Record migrations within any project, Groovy, C#{}, etc.}
+  s.description = %q{Generates a directory structure and assets to allow for using Active Record migrations within any project, Groovy, C#, etc.}
   s.email = %q{jason@lookforwardenterprises.com}
   s.executables = ["migratify"]
   s.extra_rdoc_files = [
@@ -21,10 +21,16 @@ Gem::Specification.new do |s|
   s.files = [
     ".document",
      ".gitignore",
+     "History.txt",
      "LICENSE",
      "README.rdoc",
      "Rakefile",
+     "VERSION",
+     "bin/migratify",
      "lib/migratification.rb",
+     "migratification.gemspec",
+     "resources/rake/all/db.rake",
+     "resources/rake/optional/grails.rake",
      "spec/migratification_spec.rb",
      "spec/spec.opts",
      "spec/spec_helper.rb"

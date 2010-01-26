@@ -53,11 +53,12 @@ files = {
 }
 
 gem_which_loc = ""
-IO.popen( 'gem which migratory' ) { |f| gem_which_loc = f.gets }
+gem_name = "migratification"
+IO.popen( 'gem which migratification' ) { |f| gem_which_loc = f.gets }
 
 gem_which_loc.gsub!( /\n/, '' )
-gem_which_loc.gsub!( /\/lib\/migratory.rb/, '' ) if gem_which_loc =~ /\/lib\/migratory.rb/
-gem_which_loc.gsub!( /migratory.rb/, '' ) if gem_which_loc =~ /migratory.rb/
+gem_which_loc.gsub!( /\/lib\/#{gem_name}.rb/, '' ) if gem_which_loc =~ /\/lib\/#{gem_name}.rb/
+gem_which_loc.gsub!( /#{gem_name}.rb/, '' ) if gem_which_loc =~ /#{gem_name}.rb/
 
 puts "\nCreating directories..."
 
@@ -94,10 +95,9 @@ end
 puts "\nCopying resources..."
 
 # Copy the other files
-Dir["#{gem_which_loc}/resources/rake/**/*.rake"].each do |file|
+Dir["#{gem_which_loc}/resources/rake/all/**/*.rake"].each do |file|
   file_path = File.join( base, "rake", File.basename( file ) )
-  #puts "Copying file #{file}"
-  #puts "\tto #{file_path}"
+  
   if File.exists?(file_path)
     warn "[skip] `#{file_path}' already exists"
   elsif File.exists?(file_path.downcase)
@@ -108,6 +108,13 @@ Dir["#{gem_which_loc}/resources/rake/**/*.rake"].each do |file|
     puts "[add] writing `#{file_path}'"
     File.copy( file, file_path, false )
   end
+end
+
+if options[:grails] == true
+  file_name = "grails.rake"
+  file_path = File.join( base, "rake", file_name )
+  puts "[add] writing `#{file_path}'"
+  FileUtils.copy( File.join( gem_which_loc, "resources", "rake", "optional", file_name ), file_path )
 end
 
 puts "\n[done] migratified!\n\n"

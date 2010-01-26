@@ -11,7 +11,7 @@ namespace :db do
   end
    
   # Set up the ActiveRecord environment
-  task :environment do
+  task :environment, [:env] do
     env = ENV['ENV']
     env = 'development' if env.nil?
     yaml_file_name = File.join(File.dirname(__FILE__), "..", "db", "config", "database.yml")
@@ -28,10 +28,11 @@ namespace :db do
   
   namespace :gen do
     
-    desc "Generates a new migration flie with the NAME variable provided by user."
-    task :migration do
-      name = ENV['NAME']
-      abort "\n[abort] You must supply a name for you new migration class with the NAME variable.  Usage 'NAME=create_users'.\n\n" if name.nil?
+    desc "Generates a new migration file with the NAME variable provided by user."
+    task :migration, [:name] do |t, args|
+      name = args.name
+      #name = ENV['NAME']
+      abort "\n[abort] You must supply a name for you new migration class with the :name parameter." if name.nil?
 
       migration_dir = File.join( File.dirname( __FILE__ ), "..", "db", "migrate" )
       
@@ -65,10 +66,10 @@ end
     end
     
     desc "Generates a new create table migration using the TABLE variable specified by the user to create the name of the migration."
-    task :create do
+    task :create, [:table] do  |t, args|
       
-      table = ENV['TABLE']
-      abort "\n[abort] You must supply a name for you new migration class with the TABLE variable.  Usage 'TABLE=users'.\n\n" if table.nil?
+      table = args.table
+      abort "\n[abort] You must supply a name for you new migration class with the :table parameter." if table.nil?
       name = "create_#{table.downcase}"
 
       migration_dir = File.join( File.dirname( __FILE__ ), "..", "db", "migrate" )
